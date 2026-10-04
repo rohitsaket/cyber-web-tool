@@ -1378,6 +1378,7 @@ POST_V1 (after G-V1): P25 DAST · P26 full stack breadth · P28–P29 full packs
 49 phases (WTT-P00–P48) across M0–M10 deliver WTT from governed baseline → `wtt <URL>` → deterministic testing → controlled AI → guarded autonomy → scale → enterprise → GA. All 104 catalog domains (IDs 1–1235) map to exactly one primary phase each (§70); zero UNMAPPED, zero overlaps (audit §92). Critical path (§11) runs P00→P30; gates §§81–82 guard Prototype→GA; §§87–90 define earned completion. No schedules invented; no source conflicts (header); no code generated. Next action: set Current Milestone/Phase, resolve PHZ-OD-001/010, and plan WTT-P00.
 
 **Validation log (v0.2.0 authorship):** 96/96 numbered sections present · 49/49 phase sections with full template fields · critical-path + dependency-graph + 2 evolution Mermaid diagrams render · §92 structural audit: 104/104 domains, 1235/1235 IDs, 0 missing, 0 overlaps · TOC anchors match headers · sources untouched (PRD/ARCH/RULES byte-identical).
+
 WTT-P00 re-audit (CI `tools/catalog-audit`, PHASES §92 method incl. step-3 phase-line cross-check): step 3 exposed 5 stale ranges in phase `Catalog:` lines (P36 `BH 936–943` → `936–939`; P40 `BS/BV/CL/CM 936–958` block → `940–944 / 945–949 / 950–954 / 955–958`); corrected to the §70 partition (ground truth: TOOLS.md §818–819 domain ranges); re-run 104/104 · 1235/1235 · 0 gaps · 0 overlaps · 0 phase violations.
 
 ---
