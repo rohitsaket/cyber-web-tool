@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wtt-catalog-audit"
+version = "0.0.0"
+description = "WTT structural audit of the Global Tool Catalog (PHASES.md §70/§92 method) — governance tooling, not product runtime (WTT-P00)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "UNLICENSED" }
+authors = [{ name = "WTT Engineering" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6", "mypy>=1.11"]
+
+[project.scripts]
+wtt-catalog-audit = "catalog_audit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+# EN DASH is intentional: PHASES.md capability ranges (e.g. "1–1235") use it and parsing must
+# accept it verbatim; docstrings/fixtures quote those ranges faithfully.
+allowed-confusables = ["–"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true

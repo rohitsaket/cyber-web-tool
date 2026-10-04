@@ -1,0 +1,3 @@
+# contracts/schemas/ — JSON Schema artifacts (planned)
+
+Baseline draft 2020-12 (ratified: `docs/adr/ADR-004-tool-contract-serialization.md`). One subdirectory per owned family (`config/`, `secrets/`, `target/`, `scope/`, `policy/`, `terminal/`, `cli/`, `events/`, `dashboard/`, `evidence/`, `tools/`, `graph/`, `tests/`, `api/`, `finding/`, `report/`, `gates/`, `artifacts/`, `worker/`, `security/`, `ai/`, `fix/`), each introduced by its owning phase with per-family `README.md` + versioned `*.schema.json`. Owners/paths: see `../ownership.json`. **Empty in WTT-P00 by design** — schemas are never invented ahead of their phase.

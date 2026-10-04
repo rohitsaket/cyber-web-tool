@@ -1,0 +1,16 @@
+{
+  "name": "@wtt/audits",
+  "version": "0.0.0",
+  "private": true,
+  "description": "WTT governance audits: contract ownership registry + cross-document terminology (WTT-P00)",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "wtt-audits": "dist/index.js"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run"
+  }
+}

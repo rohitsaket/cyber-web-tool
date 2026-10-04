@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "note": "Canonical-term registry seeded by WTT-P00. PRD Appendix B rows are the primary definition source; this file only carries canonical terms defined elsewhere (RULES WTT-RULE-RES-001/002), each with a verifiable anchor. forbiddenAliases is a seeded list (zero hits enforced in CI; extend, never weaken, per phase).",
+  "definedElsewhere": [
+    { "term": "WTT", "doc": "PRD.md", "anchor": "WTT — Website Testing Tool" },
+    { "term": "Capability", "doc": "TOOLS.md", "anchor": "## 5. Capability Model" },
+    { "term": "Tool", "doc": "TOOLS.md", "anchor": "## 6. Tool Model" },
+    { "term": "Worker", "doc": "ARCHITECTURE.md", "anchor": "## 32. Worker Architecture" },
+    { "term": "Agent", "doc": "ARCHITECTURE.md", "anchor": "## 25. Agent Architecture" }
+  ],
+  "forbiddenAliases": [
+    { "alias": "Web Testing Tool", "canonical": "WTT — Website Testing Tool" },
+    { "alias": "Website Test Tool", "canonical": "WTT — Website Testing Tool" },
+    { "alias": "web tester", "canonical": "WTT" },
+    { "alias": "WTTT", "canonical": "WTT" },
+    { "alias": "test task", "canonical": "Test" },
+    { "alias": "session run record", "canonical": "Run" }
+  ]
+}

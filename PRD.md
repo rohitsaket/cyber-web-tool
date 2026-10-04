@@ -660,7 +660,7 @@ WTT-RTE-003: The runtime MUST expose health (`/healthz`, `/readyz` — Proposed)
 
 WTT-RTE-004: Shutdown MUST be ordered: stop scheduling → cancel with timeout → flush events/evidence → snapshot session → release browsers/workers → stop servers → print resume/report pointers.
 
-WTT-RTE-005: The runtime MUST support single-node (default) and distributed прикрепление to external queue/workers (§53) via configuration only — no code changes.
+WTT-RTE-005: The runtime MUST support single-node (default) and distributed attachment to external queue/workers (§53) via configuration only — no code changes.
 
 Main WTT runtime diagram:
 

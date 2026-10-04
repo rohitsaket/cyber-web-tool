@@ -1,0 +1,32 @@
+# Dependencies / builds / caches
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Python (tools/catalog-audit and future services)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local secrets never belong in this repo (RULES §37)
+.env
+.env.*
+!.env.example
+
+# Local runtime scratch (WTT workspaces are created under user dirs, not the repo)
+.wtt-local/
+tmp/

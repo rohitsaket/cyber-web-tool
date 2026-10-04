@@ -1,0 +1,38 @@
+{
+  "name": "wtt-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "WTT — Website Testing Tool. Documentation-first, phase-gated monorepo (WTT-P00 baseline).",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0 <23.0.0"
+  },
+  "packageManager": "npm@10.9.8",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tools/audits"
+  ],
+  "scripts": {
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint .",
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "test:unit": "npm run test --workspaces --if-present",
+    "audit:ownership": "node tools/audits/dist/index.js ownership --root .",
+    "audit:terminology": "node tools/audits/dist/index.js terminology --root .",
+    "quality": "npm run check && npm run typecheck && npm run build && npm run test:unit",
+    "governance": "npm run audit:ownership && npm run audit:terminology",
+    "ci": "npm run quality && npm run governance"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "version": 1,
+  "ratifiedBy": "WTT-P00",
+  "granularity": "contract-family (mirrors PHASES §§19–67 'Contracts:' lines); per-file schemas live inside family paths, introduced by the owning phase",
+  "statusValues": ["PLANNED", "ACTIVE", "FROZEN"],
+  "families": [
+    {
+      "id": "domain-contract-types",
+      "name": "Core domain types: IDs, timestamps, status enums, repository ports",
+      "ownerPhase": "WTT-P01",
+      "status": "PLANNED",
+      "path": "packages/core/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "domain types, IDs, timestamps, status enums" },
+        { "doc": "RULES.md", "ref": "WTT-RULE-ARC-002" }
+      ]
+    },
+    {
+      "id": "db-migrations",
+      "name": "PostgreSQL schema + numbered forward-only migrations (single owner)",
+      "ownerPhase": "WTT-P01",
+      "status": "PLANNED",
+      "path": "packages/core/",
+      "specs": [
+        { "doc": "DATABASE.md", "ref": "WTT-DB-MIG-003" },
+        { "doc": "DATABASE.md", "ref": "WTT-DB-MIG-001" },
+        { "doc": "PHASES.md", "ref": "forward-only migrations + rollback-tested" }
+      ]
+    },
+    {
+      "id": "config-schema",
+      "name": "Versioned configuration schemas + precedence contract",
+      "ownerPhase": "WTT-P01",
+      "status": "PLANNED",
+      "path": "contracts/schemas/config/",
+      "specs": [
+        { "doc": "API.md", "ref": "configuration (versioned schemas" },
+        { "doc": "ARCHITECTURE.md", "ref": "Config Service" }
+      ]
+    },
+    {
+      "id": "secrets-reference-convention",
+      "name": "Secret-reference envelope (refs only, never plaintext material)",
+      "ownerPhase": "WTT-P01",
+      "status": "PLANNED",
+      "path": "contracts/schemas/secrets/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "secrets-as-refs from day one" },
+        { "doc": "ARCHITECTURE.md", "ref": "## 52. Secrets" }
+      ]
+    },
+    {
+      "id": "target-profile-schema",
+      "name": "Target profile schema",
+      "ownerPhase": "WTT-P02",
+      "status": "PLANNED",
+      "path": "contracts/schemas/target/",
+      "specs": [{ "doc": "PHASES.md", "ref": "target profile schema" }]
+    },
+    {
+      "id": "scope-file-schema",
+      "name": "Scope file schema (apiVersion'd allow/deny policy)",
+      "ownerPhase": "WTT-P02",
+      "status": "PLANNED",
+      "path": "contracts/schemas/scope/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "scope file schema" },
+        { "doc": "API.md", "ref": "scope files (" }
+      ]
+    },
+    {
+      "id": "policy-decision-record",
+      "name": "Policy decision record (decision + matched rule + policy version)",
+      "ownerPhase": "WTT-P02",
+      "status": "PLANNED",
+      "path": "contracts/schemas/policy/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "policy decision record" },
+        {
+          "doc": "ARCHITECTURE.md",
+          "ref": "decision(allow/approve/deny + matched rule + policy version)"
+        }
+      ]
+    },
+    {
+      "id": "terminal-risk-classification",
+      "name": "Operation risk classification table (terminal classes, enforcement mapping)",
+      "ownerPhase": "WTT-P02",
+      "enhancedByPhase": "WTT-P03",
+      "status": "PLANNED",
+      "path": "contracts/schemas/terminal/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "classification table published" },
+        { "doc": "PHASES.md", "ref": "8-class enforcement + unit-tested mapping tables" }
+      ]
+    },
+    {
+      "id": "cli-contracts",
+      "name": "CLI exit-code contract, machine-output schemas, command-execution record",
+      "ownerPhase": "WTT-P03",
+      "status": "PLANNED",
+      "path": "contracts/schemas/cli/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "CLI exit-code contract (0/1/2/3/4/5/6)" },
+        { "doc": "PHASES.md", "ref": "machine-output schemas" },
+        { "doc": "PHASES.md", "ref": "command-execution record" }
+      ]
+    },
+    {
+      "id": "event-system-contracts",
+      "name": "Canonical event envelope v1, family schemas, outbox + consumer contracts",
+      "ownerPhase": "WTT-P04",
+      "status": "PLANNED",
+      "path": "contracts/schemas/events/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "envelope v1" },
+        { "doc": "PHASES.md", "ref": "family schemas" },
+        { "doc": "PHASES.md", "ref": "outbox + consumer contracts" },
+        { "doc": "ARCHITECTURE.md", "ref": "Outbox relay" }
+      ]
+    },
+    {
+      "id": "dashboard-api",
+      "name": "Dashboard API v1 (OpenAPI) + stream cursor protocol + view-model DTOs",
+      "ownerPhase": "WTT-P05",
+      "status": "PLANNED",
+      "path": "contracts/openapi/dashboard.yaml",
+      "specs": [
+        {
+          "doc": "PHASES.md",
+          "ref": "Dashboard API v1 (OpenAPI), stream cursor protocol, view-model DTOs"
+        },
+        { "doc": "API.md", "ref": "WTT-API-OAS-002" }
+      ]
+    },
+    {
+      "id": "generated-bindings",
+      "name": "Generated TS/Python/Java bindings (single-source, marked, never hand-edited)",
+      "ownerPhase": "WTT-P05",
+      "status": "PLANNED",
+      "path": "packages/contracts/",
+      "specs": [
+        { "doc": "ARCHITECTURE.md", "ref": "ARCH-310" },
+        { "doc": "API.md", "ref": "WTT-API-OAS-003" }
+      ]
+    },
+    {
+      "id": "evidence-envelope",
+      "name": "Evidence envelope + artifact references (hash, provenance, retention)",
+      "ownerPhase": "WTT-P07",
+      "status": "PLANNED",
+      "path": "contracts/schemas/evidence/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "Browser DevTools & Evidence Engine" },
+        { "doc": "ARCHITECTURE.md", "ref": "## 36. Evidence Architecture" }
+      ]
+    },
+    {
+      "id": "tool-manifest-schema",
+      "name": "Tool manifest schema (identity, capabilities, runtime, permissions, risk)",
+      "ownerPhase": "WTT-P08",
+      "status": "PLANNED",
+      "path": "contracts/schemas/tools/",
+      "specs": [
+        { "doc": "TOOLS.md", "ref": "## 13. Tool Manifest" },
+        { "doc": "PHASES.md", "ref": "Tool Contract, Capability Registry & Plugin Runtime" }
+      ]
+    },
+    {
+      "id": "tool-io-contracts",
+      "name": "Tool Contract input/output schemas + health/error conventions",
+      "ownerPhase": "WTT-P08",
+      "status": "PLANNED",
+      "path": "contracts/schemas/tools/",
+      "specs": [
+        { "doc": "RULES.md", "ref": "WTT-RULE-TOOL-002" },
+        { "doc": "ARCHITECTURE.md", "ref": "## 28. Tool Contract" }
+      ]
+    },
+    {
+      "id": "inter-language-services",
+      "name": "Versioned .proto + JSONL/HTTP service contracts for Python/Java workers",
+      "ownerPhase": "WTT-P08",
+      "status": "PLANNED",
+      "path": "contracts/proto/",
+      "specs": [
+        { "doc": "ARCHITECTURE.md", "ref": "## 31. Inter-Language Communication" },
+        { "doc": "API.md", "ref": "Versioned `.proto` in `contracts/proto`" }
+      ]
+    },
+    {
+      "id": "knowledge-graph-schema",
+      "name": "Application knowledge graph node/edge schema",
+      "ownerPhase": "WTT-P10",
+      "status": "PLANNED",
+      "path": "contracts/schemas/graph/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "Application Knowledge Graph" },
+        { "doc": "ARCHITECTURE.md", "ref": "## 19. Application Knowledge Graph" }
+      ]
+    },
+    {
+      "id": "functional-test-model",
+      "name": "Plan/test/scenario/step model + oracle + verdict contract",
+      "ownerPhase": "WTT-P11",
+      "status": "PLANNED",
+      "path": "contracts/schemas/tests/",
+      "specs": [{ "doc": "PHASES.md", "ref": "Functional Testing Engine" }]
+    },
+    {
+      "id": "api-testing-contracts",
+      "name": "API observation/execution records + contract-test + mock/virtualization schemas",
+      "ownerPhase": "WTT-P17",
+      "enhancedByPhase": "WTT-P19",
+      "status": "PLANNED",
+      "path": "contracts/schemas/api/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "REST API Testing" },
+        { "doc": "API.md", "ref": "WTT-API-VAL-003" }
+      ]
+    },
+    {
+      "id": "finding-and-intel-schemas",
+      "name": "Canonical finding, transition, RCA-record, integrity-seal schemas",
+      "ownerPhase": "WTT-P30",
+      "status": "PLANNED",
+      "path": "contracts/schemas/finding/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "canonical finding schema" },
+        { "doc": "PHASES.md", "ref": "integrity-seal schema" }
+      ]
+    },
+    {
+      "id": "verification-verdict-schema",
+      "name": "Verification verdict schema (VERIFIED_FIXED/PARTIALLY_FIXED/NOT_FIXED/REGRESSED/INCONCLUSIVE)",
+      "ownerPhase": "WTT-P30",
+      "status": "PLANNED",
+      "path": "contracts/schemas/finding/",
+      "specs": [{ "doc": "PHASES.md", "ref": "verification verdict schema" }]
+    },
+    {
+      "id": "report-model",
+      "name": "Canonical report model (versioned) + renderer inputs",
+      "ownerPhase": "WTT-P29",
+      "status": "PLANNED",
+      "path": "contracts/schemas/report/",
+      "specs": [
+        { "doc": "ARCHITECTURE.md", "ref": "### 51.3 Report pipeline" },
+        { "doc": "API.md", "ref": "WTT-API-VER-005" }
+      ]
+    },
+    {
+      "id": "quality-gate-schemas",
+      "name": "Gate policy/results/audit schemas + check-run payloads + readiness score",
+      "ownerPhase": "WTT-P39",
+      "status": "PLANNED",
+      "path": "contracts/schemas/gates/",
+      "specs": [{ "doc": "PHASES.md", "ref": "gate-policy/results/audit schemas" }]
+    },
+    {
+      "id": "artifact-store-contract",
+      "name": "ArtifactStore port: FS V1 layout + S3-compatible backend config + retention/refs",
+      "ownerPhase": "WTT-P40",
+      "status": "PLANNED",
+      "path": "contracts/schemas/artifacts/",
+      "specs": [
+        {
+          "doc": "PHASES.md",
+          "ref": "Artifact Storage, Secrets, Notifications & Management Integrations"
+        },
+        { "doc": "ARCHITECTURE.md", "ref": "## 50. Object Storage" }
+      ]
+    },
+    {
+      "id": "worker-queue-contracts",
+      "name": "Worker message/job contract, queue bindings, DLQ + replay semantics",
+      "ownerPhase": "WTT-P35",
+      "status": "PLANNED",
+      "path": "contracts/schemas/worker/",
+      "specs": [
+        { "doc": "API.md", "ref": "Message contract (REQUIRED fields" },
+        { "doc": "PHASES.md", "ref": "Orchestration, Queues & Distributed Workers" }
+      ]
+    },
+    {
+      "id": "security-adapter-contracts",
+      "name": "Authorized DAST/defensive adapter I/O + evidence normalization schemas",
+      "ownerPhase": "WTT-P25",
+      "status": "PLANNED",
+      "path": "contracts/schemas/security/",
+      "specs": [{ "doc": "PHASES.md", "ref": "Authorized DAST & Defensive Security Adapters" }]
+    },
+    {
+      "id": "ai-structured-io",
+      "name": "AI structured task/response schemas + provider abstraction contracts",
+      "ownerPhase": "WTT-P13",
+      "status": "PLANNED",
+      "path": "contracts/schemas/ai/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "AI Orchestrator & Dynamic Tool Selection" },
+        { "doc": "ARCHITECTURE.md", "ref": "### 25.1 Structured agent communication" }
+      ]
+    },
+    {
+      "id": "fix-and-checkpoint-contracts",
+      "name": "Patch proposal/apply/checkpoint/rollback + verification-linkage schemas",
+      "ownerPhase": "WTT-P32",
+      "status": "PLANNED",
+      "path": "contracts/schemas/fix/",
+      "specs": [
+        { "doc": "PHASES.md", "ref": "Guarded Auto-Remediation" },
+        { "doc": "ARCHITECTURE.md", "ref": "## 41. Auto-Remediation" }
+      ]
+    }
+  ]
+}
