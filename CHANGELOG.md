@@ -49,6 +49,7 @@ carries `[Unreleased]` until the first ratified release.
   `CHANGELOG.md` initialized (this file).
 - Phase planning/reporting: `docs/phases/WTT-P00-plan.md` and
   `docs/phases/WTT-P00-report.md` per PHASES §91.
+- P00 verification close-out: GitHub Actions run `37226238529` — all four jobs green (`quality` on ubuntu-latest + macos-latest + windows-latest, and `governance audits`); PHASES §19 status set to COMPLETE; annotated baseline tag `wtt-p00-baseline` recorded on the closing commit.
 
 ### Changed
 

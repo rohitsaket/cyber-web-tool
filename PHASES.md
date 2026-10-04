@@ -351,7 +351,7 @@ WTT-PHZ-MS-006: P48 gates pass: V1 + required enterprise slices hardened; full c
 
 ## 19. WTT-P00 — Governance, Product Contract & Engineering Foundation
 
-- **Milestone:** M0 · **Status:** `NOT_STARTED` · **Objective:** Immutable engineering baseline: ratified docs, repo, conventions, security invariants, catalog ownership.
+- **Milestone:** M0 · **Status:** `COMPLETE` (2026-10-04 — ADRs ratified, monorepo + toolchain + CI 3-OS matrix green, ownership registry + audits in CI, CHANGELOG initialized; evidence: `docs/phases/WTT-P00-report.md`, run `37226238529`, tag `wtt-p00-baseline`) · **Objective:** Immutable engineering baseline: ratified docs, repo, conventions, security invariants, catalog ownership.
 - **Prerequisites (ENTRY):** [ ] PRD/ARCH/RULES/PHASES drafts + catalog structure (this doc §70) available [ ] repo + toolchain install rights. Else BLOCKED.
 - **Catalog:** none introduced — P00 establishes the catalog ownership registry (domains A–CZ → primary phases per §70); all capability rows are owned by P01–P48. Types: NATIVE (conventions/repo).
 - **May change:** docs, repo layout, toolchains, CI skeleton, `contracts/` ownership registry. **Must NOT change:** n/a (greenfield) — but MUST NOT create runtime services, browser/AI code, or scanners.
@@ -1333,7 +1333,7 @@ print('domains:', len(domains), '| covered:', len(seen), '| missing:', missing[:
 EOF
 ```
 
-**Result (v0.2.0, recorded at authorship; re-run per milestone):** domains 104/104 · IDs 1235/1235 · UNMAPPED 0 · overlaps 0 (validation output in §96 log). **Status honesty:** all phases `NOT_STARTED`; no capability claims IMPLEMENTED/VERIFIED anywhere in this roadmap — statuses are earned only via §§87–90.
+**Result (v0.2.0, recorded at authorship; re-run per milestone):** domains 104/104 · IDs 1235/1235 · UNMAPPED 0 · overlaps 0 (validation output in §96 log). **Status honesty (updated at P00 close):** WTT-P00 `COMPLETE` (governance-only — introduces zero capability rows, so no capability claim changes); every other phase `NOT_STARTED`; no capability is claimed `IMPLEMENTED`/`VERIFIED` anywhere in this roadmap — statuses are earned only via §§87–90.
 ## 93. Requirement Traceability
 
 Source-area → phase index (normative detail lives in sources; this index prevents orphaned requirements):
